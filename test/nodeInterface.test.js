@@ -24,18 +24,18 @@ var test = module.exports = {
 
 test['node interface'] = {
   'references': function() {
-    linAlg._normal.should.be.instanceof(Function);
-    linAlg._precision.should.be.instanceof(Function);
+    linAlg.normal.should.be.instanceof(Function);
+    linAlg.precision.should.be.instanceof(Function);
   },
   'init': {
     'normal': function() {
-      mocker.spy(linAlg, '_normal');
+      mocker.spy(linAlg, 'normal');
 
       var LinAlg = linAlg();
       LinAlg.Matrix.should.be.instanceof(Function);
     },
     'precision': function() {
-      mocker.spy(linAlg, '_precision');
+      mocker.spy(linAlg, 'precision');
 
       var LinAlg = linAlg({
         add: true
